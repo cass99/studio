@@ -1,0 +1,84 @@
+/* 
+ * @include mq(320, 640);  * mq between 320px and 640px
+ * @include mq(640);  * mq min-width 640px
+ * @include mq($min: 640);  * also mq min-width 640px
+ * @include mq($max: 640);  * mq max-width 640px
+ */
+
+@mixin mq($min: n, $max: n) {
+    $query: null;
+
+    @if type-of($min) == number and type-of($max) == number {
+        $query: "(min-width: #{$min}px) and (max-width: #{$max}px)";
+    } @else if type-of($min) == number {
+        $query: "(min-width: #{$min}px)";
+    } @else if type-of($max) == number {
+        $query: "(max-width: #{$max}px)";
+    }
+
+    @media only screen and #{$query} {
+        @content;
+    }
+}
+
+// @include mini { // css }
+@mixin mobile-portrait {
+    @include mq($max: $mqMobilePortrait) {
+        @content;
+    }
+}
+
+// gt = greater than
+@mixin gt-mobile-portrait {
+    @include mq($min: $mqMobilePortrait + 1) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @include mq($max: $mqMobile) {
+        @content;
+    }
+}
+
+@mixin gt-mobile {
+    @include mq($min: $mqMobile + 1) {
+        @content;
+    }
+}
+
+@mixin tablet-portrait {
+    @include mq($max: $mqTabletPortrait) {
+        @content;
+    }
+}
+
+@mixin gt-tablet-portrait {
+    @include mq($min: $mqTabletPortrait + 1) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @include mq($max: $mqTablet) {
+        @content;
+    }
+}
+
+@mixin gt-tablet {
+    @include mq($min: $mqTablet + 1) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @include mq($max: $mqDesktop) {
+        @content;
+    }
+}
+
+@mixin gt-desktop {
+    @include mq($min: $mqDesktop + 1) {
+        @content;
+    }
+}

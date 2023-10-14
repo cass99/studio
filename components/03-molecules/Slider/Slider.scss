@@ -1,0 +1,43 @@
+
+.Slider {
+    overflow: hidden;
+
+    .tns-visually-hidden {
+        display: none;
+    }
+
+    .tns-nav > [aria-controls] {
+        width: 9px;
+        height: 9px;
+        padding: 0;
+        margin: 0 5px;
+        border-radius: 50%;
+        background: $grey;
+        border: 0;
+    }
+
+    .tns-nav > .tns-nav-active {
+        background: $highlight;
+        width: 10px;
+        height: 10px;
+    }
+
+    &-- {
+        &stage {
+            .tns-nav {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 10px;
+                text-align: center;
+
+                @include gt-desktop {
+                    left: 670px;
+                    right: unset;
+                    z-index: 100;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+}

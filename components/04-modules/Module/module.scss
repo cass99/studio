@@ -1,0 +1,6 @@
+
+.Module {
+    &:not(:first-child) {
+        margin-top: var(--moduleSpace);
+    }
+}

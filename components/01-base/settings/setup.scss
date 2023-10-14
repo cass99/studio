@@ -1,0 +1,68 @@
+/*
+Theme Name: Studio
+Theme URI: https://wordpress.org/themes/twentytwenty/
+Author: Piotr Mierzejewski
+Author URI: https://wordpress.org/
+Description: Test theme
+Version: 1.0.0
+Text Domain: studio
+*/
+
+/* ------------------------------------------------
+ * Fonts
+ * ------------------------------------------------
+ */
+@include font-face(Effra, 'Effra', $weight: normal, $type: "woff2");
+@include font-face(Effra, 'Effra-Italic', $weight: normal, $style: italic, $type: "woff2");
+@include font-face(Effra, 'Effra-Medium', $weight: 500, $type: "woff2");
+@include font-face(Effra, 'Effra-MediumItalic', $weight: 500, $style: italic, $type: "woff2");
+@include font-face(Effra, 'Effra-Bold', $weight: 700, $type: "woff2");
+@include font-face(Effra, 'Effra-BoldItalic', $weight: 700, $style: italic, $type: "woff2");
+
+/* ------------------------------------------------
+ * Colors
+ * ------------------------------------------------
+ */
+$body: #222222;
+$white: #fff;
+$black: #000;
+$highlight: #CD305E;
+$pink: #F4ECEC;
+$beige: #f5f5f5;
+$grey: #cdcdcd;
+
+/* ------------------------------------------------
+ * Media queries
+ * ------------------------------------------------
+ */
+$mqMobilePortrait: 544;
+$mqMobile: 767;
+$mqTabletPortrait: 860;
+$mqTablet: 1024;
+$mqDesktop: 1210;
+
+/* ------------------------------------------------
+ * Container sizes
+ * ------------------------------------------------
+ */
+$containerSizes: (
+    default: (
+        desktop: 1200,
+        tablet: 1000,
+        mobile: 600
+    ),
+    small: (
+        desktop: 850,
+    ),
+    wide: (
+        desktop: 1600,
+    )
+);
+
+/* ------------------------------------------------
+ * CSS variables
+ * ------------------------------------------------
+ */
+$cssVars: (
+    moduleSpace: (m: "60px", tp: "120px"),
+);

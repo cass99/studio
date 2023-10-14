@@ -1,0 +1,58 @@
+@use "sass:map";
+
+// all Container widths
+$containerWidth: (
+    desktop: 94%,
+    tablet: 94%,
+    tablet-portrait: 94%,
+    mobile: 90%
+);
+
+// max-width of container
+$containerSizes: (
+    default: 1200,
+    small: 850,
+    wide: 1720
+);
+
+.container {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    width: map.get($containerWidth, "mobile");
+    max-width: map.get($containerSizes, "default") + px;
+
+    @if map.get($containerWidth, "tablet-portrait") {
+        @include gt-mobile {
+            width: map.get($containerWidth, "tablet-portrait");
+        }
+    }
+
+    @if map.get($containerWidth, "tablet") {
+        @include gt-tablet-portrait {
+            width: map.get($containerWidth, "tablet");
+        }
+    }
+
+    @if map.get($containerWidth, "desktop") {
+        @include gt-tablet {
+            width: map.get($containerWidth, "desktop");
+        }
+    }
+}
+
+.container-- {
+    @each $size, $width in $containerSizes {
+        // .Container--default size isn't needed, cause .Container is default
+        @if $size != "default" {
+            &#{$size} {
+                max-width: $width + px;
+            }
+        }
+    }
+
+    &positionUnset {
+        position: unset;
+    }
+}

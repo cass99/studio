@@ -1,0 +1,153 @@
+
+.Header {
+    &__ {
+        &container {
+            position: relative;
+        }
+
+        &top {
+            padding: 20px 0;
+            background-color: $beige;
+
+            @include gt-desktop {
+                display: none;
+            }
+
+            &Container {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        &phone {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            color: $body;
+
+            &::before {
+                content: '';
+                display: block;
+                background: url("./img/Phone-header.svg") no-repeat;
+                width: 15px;
+                height: 20px;
+                float: left;
+                margin-right: 8px;
+            }
+
+            @include gt-desktop {
+                min-width: max-content;
+            }
+
+            &Desktop {
+                display: none;
+
+                @include gt-desktop {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 64px;
+                    height: 100%;
+                    background-color: $pink;
+                }
+            }
+        }
+
+        &facebook {
+            display: inline-block;
+            background: url("./img/Facebook.svg") no-repeat;
+            width: 12px;
+            height: 20px;
+            margin-right: 24px;
+        }
+
+        &instagram {
+            display: inline-block;
+            background: url("./img/Instagram.svg") no-repeat;
+            width: 20px;
+            height: 20px;
+        }
+
+        &bottom {
+            padding: 10px 0;
+            position: unset;
+
+            @include gt-desktop {
+                display: flex;
+                align-items: center;
+                height: 100px;
+                padding: 0;
+            }
+        }
+
+        &logo {
+            display: inline-block;
+            background: url("./img/Logo-header.svg") no-repeat;
+            background-size: contain;
+            width: 140px;
+            height: 36px;
+
+            @include gt-desktop {
+                width: 230px;
+                height: 45px;
+            }
+        }
+
+        &navigation {
+            display: none;
+
+            @include gt-desktop {
+                display: inline-block;
+                width: 100%;
+                padding: 0 34px 0 70px;
+            }
+        }
+
+        &tools {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            @include gt-desktop {
+                position: unset;
+                height: 100%;
+            }
+        }
+
+        &courses {
+            display: flex;
+            align-items: center;
+            height: 60px;
+            padding: 0 22px;
+            background-color: $highlight;
+            font-size: 14px;
+            color: $white;
+            text-transform: capitalize;
+            cursor: pointer;
+
+            @include gt-desktop {
+                height: 100%;
+                padding: 0 65px;
+                font-size: 16px;
+                border-radius: 0 50px 0 0;
+            }
+
+            &Text {
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    background: url("./img/arrow-header.svg") no-repeat;
+                    background-size: contain;
+                    width: 12px;
+                    height: 8px;
+                    margin-left: 8px;
+                }
+
+                @include gt-desktop {
+                    min-width: max-content;
+                }
+            }
+        }
+    }
+}

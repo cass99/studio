@@ -1,0 +1,16 @@
+
+.Button {
+    display: block;
+    width: fit-content;
+    padding: 11px 34px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: 2px solid $highlight;
+    border-radius: 4px;
+
+    @include gt-desktop {
+        padding: 14px 46px;
+        font-size: 14px;
+    }
+}

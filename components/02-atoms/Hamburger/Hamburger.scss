@@ -1,0 +1,111 @@
+
+@mixin icon($height, $width) {
+    transition-duration: 0.5s;
+    position: absolute;
+    height: $height;
+    width: $width;
+    top: 12px;
+    background-color: $body;
+}
+  
+@mixin icon-before($height, $width, $top) {
+    transition-duration: 0.5s;
+    position: absolute;
+    width: $width;
+    height: $height;
+    background-color: $body;
+    content: "";
+    top: $top;
+}
+  
+@mixin icon-after($height, $width, $top) {
+    transition-duration: 0.5s;
+    position: absolute;
+    width: $width;
+    height: $height;
+    background-color: $body;
+    content: "";
+    top: $top;
+}
+
+.Hamburger {
+    $self: &;
+
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-right: 14px;
+    transition-duration: 0.5s;
+
+    @include gt-desktop {
+        display: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+    
+    &__ {
+        &leftIcon {
+            @include icon(3px, 12px);
+    
+            &:before{
+                @include icon-before(3px, 12px, -8px);
+            }
+            
+            &:after{
+                @include icon-after(3px, 12px, 8px);
+            }
+            
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        &rightIcon {
+            @include icon(3px, 12px);
+            left: 12px;
+    
+            &:before{
+                @include icon-before(3px, 12px, -8px);
+            }
+    
+            &:after{
+                @include icon-after(3px, 12px, 8px);
+            }
+        }
+    }
+    
+    &-- {
+        &open {
+            #{$self}__ {
+                &leftIcon {
+                    transition-duration: 0.5s;
+                    background: transparent;
+                
+                    &:before {
+                        transform: rotateZ(45deg) scaleX(1.4) translate(2px, 2px);
+                    }
+                
+                    &:after {
+                        transform: rotateZ(-45deg) scaleX(1.4) translate(2px, -2px);
+                    }
+                }
+
+                &rightIcon {
+                    transition-duration: 0.5s;
+                    background: transparent;  
+                
+                    &:before {
+                        transform: rotateZ(-45deg) scaleX(1.4) translate(-2px, 2px);
+                    }
+                
+                    &:after {
+                        transform: rotateZ(45deg) scaleX(1.4) translate(-2px, -2px);
+                    }
+                }
+            }
+        }
+    }
+}
