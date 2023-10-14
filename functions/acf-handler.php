@@ -71,20 +71,6 @@ function registerComponentsCategory ($categories) {
 }
 
 add_filter('block_categories_all' , 'registerComponentsCategory');
-
-// Handle rendering of custom post type
-function acfRenderCallback ($block) {
-    global $componentPath;
-
-    // convert name ("acf/testimonial") into path friendly slug ("testimonial")
-    $slug = ucfirst(str_replace('acf/', '', $block['name']));
-    $path = $componentPath[$slug] . ".php";
-
-    // include a template part from within the "template-parts/block" folder
-    if (file_exists(get_theme_file_path($path))) {
-        include(get_theme_file_path($path));
-    }
-}
  
 // Disable default gutenberg blocks
 function disableDefaultBlocks($allowed_blocks, $editor_context) {
