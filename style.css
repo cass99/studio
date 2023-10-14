@@ -780,6 +780,36 @@ strong {
     margin-top: 26px;
   }
 }
+.Stage__icons {
+  display: none;
+}
+@media only screen and (min-width: 1211px) {
+  .Stage__icons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 30px 12px 30px 20px;
+    background: #fff;
+    border-radius: 27px 0 0 27px;
+  }
+}
+.Stage__icon {
+  margin-left: auto;
+  margin-right: auto !important;
+  transition: 0.3s;
+}
+.Stage__icon:not(:first-of-type) {
+  margin-top: 32px;
+}
+.Stage__icon:hover {
+  transform: scale(1.15);
+}
 
 .Header__container {
   position: relative;

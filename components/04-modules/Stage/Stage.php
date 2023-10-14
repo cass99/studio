@@ -15,5 +15,13 @@
                 <?php getComponent('Button', ['buttonClass' => 'Stage__button']); ?>
             </div>
         </div>
+        <div class="Stage__icons">
+            <?php if ($facebook = get_field('options::header:facebook', 'options')) : ?>
+                <a href="<?= $facebook; ?>" target="blank" class="Stage__icon Header__facebook"></a>
+            <?php endif; ?>
+            <?php if ($instagram = get_field('options::header:instagram', 'options')) : ?>
+                <a href="<?= $instagram; ?>" target="blank" class="Stage__icon Header__instagram"></a>
+            <?php endif; ?>
+        </div>
     </div>
 </section>

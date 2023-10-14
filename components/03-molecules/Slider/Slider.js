@@ -26,7 +26,7 @@ export default class Slider {
             items: 1,
             slideBy: "page",
             center: true, 
-            autoplay: false,
+            autoplay: true,
             mouseDrag: true,
             controls: false,
             autoplayButtonOutput: false,

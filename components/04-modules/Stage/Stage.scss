@@ -72,5 +72,38 @@
                 margin-top: 26px;
             }
         }
+
+        &icons {
+            display: none;
+
+            @include gt-desktop {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                height: fit-content;
+                margin-top: auto;
+                margin-bottom: auto;
+                padding: 30px 12px 30px 20px;
+                background: $white;
+                border-radius: 27px 0 0 27px;
+            }
+        }
+
+        &icon {
+            margin-left: auto;
+            margin-right: auto !important;
+            transition: 0.3s;
+
+            &:not(:first-of-type) {
+                margin-top: 32px;
+            }
+
+            &:hover {
+                transform: scale(1.15);
+            }
+        }
     }
 }
