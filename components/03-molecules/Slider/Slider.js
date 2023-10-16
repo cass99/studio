@@ -46,7 +46,7 @@ export default class Slider {
                 "1210": {
                     "items": 4,
                     "fixedWidth": false,
-                    "gutter": 40
+                    "gutter": 20
                 }
             };
         }

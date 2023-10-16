@@ -12,8 +12,8 @@
             height: 310px;
 
             @include gt-desktop {
-                padding: 35px;
-                height: 360px;
+                padding: 30px;
+                height: 400px;
             }
 
             &:hover {
@@ -25,6 +25,10 @@
             font-size: 10px;
             font-weight: 500;
             text-transform: uppercase;
+
+            @include gt-desktop {
+                font-size: 13px;
+            }
         }
 
         &title {
@@ -33,14 +37,17 @@
             font-weight: 500;
 
             @include gt-desktop {
-                height: 160px;
+                height: 200px;
+                font-size: 26px;
             }
         }
 
         &dates {
 
             &Title {
-
+                @include gt-desktop {
+                    font-size: 14px;
+                }
             }
 
             &Container {
@@ -54,6 +61,10 @@
                 font-size: 12px;
                 font-weight: 500;
                 background-color: $backgroung;
+                
+                @include gt-desktop {
+                    font-size: 14px;
+                }
             }
         }
 
