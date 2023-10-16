@@ -1,0 +1,64 @@
+
+.CoursesTile {
+
+    &__ {
+        &container {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            padding: 20px 15px;
+            text-align: start;
+            background-color: $white;
+            height: 310px;
+
+            @include gt-desktop {
+                padding: 35px;
+                height: 360px;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.025);
+            }
+        }
+
+        &genre {
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        &title {
+            height: 110px;
+            margin-top: 16px;
+            font-weight: 500;
+
+            @include gt-desktop {
+                height: 160px;
+            }
+        }
+
+        &dates {
+
+            &Title {
+
+            }
+
+            &Container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            &Date {
+                margin: 8px 8px 0 0;
+                padding: 5px 14px;
+                font-size: 12px;
+                font-weight: 500;
+                background-color: $backgroung;
+            }
+        }
+
+        &button {
+            margin-top: auto;
+        }
+    }
+}

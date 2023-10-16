@@ -3,6 +3,8 @@
 // Create path where json should be saved
 function createJsonPath($blockName) {
     global $componentPath;
+
+    $blockName = getCompomentKey($blockName);
     
     if (isset($componentPath[$blockName])) {
         $pathToParentFolder = substr($componentPath[$blockName], 0, strpos($componentPath[$blockName], $blockName));
@@ -16,12 +18,26 @@ function createJsonPath($blockName) {
     return false;
 }
 
+// Get component key based on acf block name
+function getCompomentKey($blockName) {
+    global $componentPath;
+
+    $blockName = str_replace('acf/', '', $blockName);
+    $componentPathKeys = array_keys($componentPath);
+    foreach ($componentPathKeys as $key) {
+        if (strtolower($key) === $blockName) {
+            $blockName = $key;
+        }
+    }
+
+    return $blockName;
+}
+
 // Save json to specific folder
 function acfHandleSave($path) {
     if ($getAcfData = acfGetGroupRule()) {
-        if ($getAcfData['param'] === 'block') {
-            $blockName = ucfirst(str_replace('acf/', '', $getAcfData['value']));
-            if ($blockJsonPath = createJsonPath($blockName)) {
+        if ($getAcfData['param'] === 'block' || $getAcfData['param'] === 'post_type') {
+            if ($blockJsonPath = createJsonPath($getAcfData['value'])) {
                 return $blockJsonPath;
             }
         }
@@ -77,7 +93,7 @@ function acfRenderCallback ($block) {
     global $componentPath;
 
     // convert name ("acf/testimonial") into path friendly slug ("testimonial")
-    $slug = ucfirst(str_replace('acf/', '', $block['name']));
+    $slug = getCompomentKey($block['name']);
     $path = $componentPath[$slug] . ".php";
 
     // include a template part from within the "template-parts/block" folder

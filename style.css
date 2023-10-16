@@ -520,6 +520,19 @@ strong {
   position: unset;
 }
 
+/* ------------------------------------------------
+ * CSS variables handle
+ * ------------------------------------------------
+ */
+:root {
+  --moduleSpace: 60px;
+}
+@media only screen and (min-width: 768px) {
+  :root {
+    --moduleSpace: 100px;
+  }
+}
+
 .Button {
   display: block;
   width: fit-content;
@@ -529,6 +542,14 @@ strong {
   text-transform: uppercase;
   border: 2px solid #CD305E;
   border-radius: 4px;
+  box-shadow: inset 0 0 0 0 #CD305E;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+.Button:hover {
+  box-shadow: inset 400px 0 0 0 #CD305E;
+  color: #fff;
 }
 @media only screen and (min-width: 1211px) {
   .Button {
@@ -693,6 +714,59 @@ strong {
   width: 10px;
   height: 10px;
 }
+.Slider .tns-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+.Slider .tns-controls > [data-controls=prev], .Slider .tns-controls > [data-controls=next] {
+  height: 40px;
+  width: 40px;
+  border: 2px solid #000;
+  background: none;
+  z-index: 200;
+  box-shadow: inset 0 0 0 0 #000;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+.Slider .tns-controls > [data-controls=prev]:hover, .Slider .tns-controls > [data-controls=next]:hover {
+  box-shadow: inset -100px 0 0 0 #000;
+  color: #fff;
+}
+.Slider .tns-controls > [data-controls=prev]:hover::before, .Slider .tns-controls > [data-controls=next]:hover::before {
+  background: url("./img/arrow-white.svg") no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+}
+@media only screen and (min-width: 1211px) {
+  .Slider .tns-controls > [data-controls=prev], .Slider .tns-controls > [data-controls=next] {
+    position: absolute;
+    top: 205px;
+  }
+}
+.Slider .tns-controls > [data-controls=prev]::before, .Slider .tns-controls > [data-controls=next]::before {
+  content: "";
+  display: block;
+  background: url("./img/arrow.svg") no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 9px;
+  margin: auto;
+}
+@media only screen and (min-width: 1211px) {
+  .Slider .tns-controls > [data-controls=prev] {
+    left: -40px;
+  }
+}
+.Slider .tns-controls > [data-controls=next] {
+  transform: rotate(180deg);
+}
+@media only screen and (min-width: 1211px) {
+  .Slider .tns-controls > [data-controls=next] {
+    right: -40px;
+  }
+}
 .Slider--stage .tns-nav {
   position: absolute;
   left: 0;
@@ -706,6 +780,22 @@ strong {
     right: unset;
     z-index: 100;
     transform: rotate(90deg);
+  }
+}
+.Slider--coursesList {
+  position: relative;
+  overflow: visible;
+}
+.Slider--coursesList .tns-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+}
+@media only screen and (min-width: 1211px) {
+  .Slider--coursesList .tns-nav {
+    position: unset;
+    margin-top: 70px;
   }
 }
 
@@ -763,7 +853,7 @@ strong {
     width: 720px;
     max-width: 100%;
     padding-top: 0;
-    background: #fff;
+    background: #f9f9f9;
     border-radius: 0 60px 0 0;
   }
 }
@@ -809,6 +899,121 @@ strong {
 }
 .Stage__icon:hover {
   transform: scale(1.15);
+}
+
+.CoursesList {
+  text-align: center;
+}
+.CoursesList__subheadline {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #CD305E;
+}
+@media only screen and (min-width: 1211px) {
+  .CoursesList__subheadline {
+    font-size: 15px;
+  }
+}
+.CoursesList__genre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+@media only screen and (min-width: 1211px) {
+  .CoursesList__genre {
+    flex-direction: row;
+    justify-content: center;
+    margin: 40px auto auto;
+    padding: 3px 4px;
+    width: fit-content;
+    border: 1px solid #CD305E;
+    border-radius: 25px;
+  }
+}
+.CoursesList__genreItem {
+  width: fit-content;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+.CoursesList__genreItem:not(:first-of-type) {
+  margin-top: 5px;
+}
+@media only screen and (min-width: 1211px) {
+  .CoursesList__genreItem:not(:first-of-type) {
+    margin-top: 0px;
+  }
+}
+.CoursesList__genreItem--active {
+  color: #fff;
+  background-color: #CD305E;
+  border-radius: 18px;
+}
+@media only screen and (min-width: 1211px) {
+  .CoursesList__genreItem--active {
+    border-radius: 25px;
+  }
+}
+.CoursesList__slider {
+  margin-top: 30px;
+  display: none;
+}
+@media only screen and (min-width: 1211px) {
+  .CoursesList__slider {
+    padding: 0 40px;
+  }
+}
+.CoursesList__slider--active {
+  display: block;
+}
+
+.CoursesTile__container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 20px 15px;
+  text-align: start;
+  background-color: #fff;
+  height: 310px;
+}
+@media only screen and (min-width: 1211px) {
+  .CoursesTile__container {
+    padding: 35px;
+    height: 360px;
+  }
+}
+.CoursesTile__container:hover {
+  box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.025);
+}
+.CoursesTile__genre {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.CoursesTile__title {
+  height: 110px;
+  margin-top: 16px;
+  font-weight: 500;
+}
+@media only screen and (min-width: 1211px) {
+  .CoursesTile__title {
+    height: 160px;
+  }
+}
+.CoursesTile__datesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.CoursesTile__datesDate {
+  margin: 8px 8px 0 0;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #f9f9f9;
+}
+.CoursesTile__button {
+  margin-top: auto;
 }
 
 .Header__container {
@@ -952,6 +1157,10 @@ strong {
   .Header__coursesText {
     min-width: max-content;
   }
+}
+
+.Body {
+  background-color: #f9f9f9;
 }
 
 .Error404 {

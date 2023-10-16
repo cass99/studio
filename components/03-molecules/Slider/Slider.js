@@ -21,19 +21,37 @@ export default class Slider {
     init($slider) {
         let $container = $slider.querySelector('.Slider__container');
 
-        let options = {
+        let $options = {
             container: $container,
             items: 1,
             slideBy: "page",
-            center: true, 
             autoplay: true,
             mouseDrag: true,
             controls: false,
             autoplayButtonOutput: false,
-            navPosition: 'bottom'
+            navPosition: 'bottom',
+            controlsText: ['', '']
         };
 
-        tns(options);
+        if ($slider.classList.contains('Slider--coursesList')) {
+            if ($container.children.length === 1) {
+                $options.center = true;
+            }
+        
+            $options.fixedWidth = 260;
+            $options.gutter = 10;
+            $options.controls = true;
+            $options.controlsPosition = 'bottom';
+            $options.responsive = {
+                "1210": {
+                    "items": 4,
+                    "fixedWidth": false,
+                    "gutter": 40
+                }
+            };
+        }
+
+        tns($options);
     }
 
     stageAdjustDots($slider) {

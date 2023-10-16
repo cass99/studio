@@ -22,6 +22,65 @@
         height: 10px;
     }
 
+    .tns-controls {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+
+        & > [data-controls="prev"],
+        & > [data-controls="next"] {
+            height: 40px;
+            width: 40px;
+            border: 2px solid $black;
+            background: none;
+            z-index: 200;
+            box-shadow: inset 0 0 0 0 $black;
+            -webkit-transition: ease-out 0.4s;
+            -moz-transition: ease-out 0.4s;
+            transition: ease-out 0.4s;
+
+            &:hover {
+                box-shadow: inset -100px 0 0 0 $black;
+                color: $white;
+
+                &::before {
+                    background: url("./img/arrow-white.svg") no-repeat;
+                    background-size: contain;
+                    transform: rotate(180deg);
+                }
+            }
+
+            @include gt-desktop {
+                position: absolute;
+                top: 205px;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                background: url("./img/arrow.svg") no-repeat;
+                background-size: contain;
+                width: 15px;
+                height: 9px;
+                margin: auto;
+            }
+        }
+
+        & > [data-controls="prev"] {
+            @include gt-desktop {
+                left: -40px;
+            }
+        }
+
+        & > [data-controls="next"] {
+            transform: rotate(180deg);
+
+            @include gt-desktop {
+                right: -40px;
+            }
+        }
+    }
+
     &-- {
         &stage {
             .tns-nav {
@@ -36,6 +95,23 @@
                     right: unset;
                     z-index: 100;
                     transform: rotate(90deg);
+                }
+            }
+        }
+
+        &coursesList {
+            position: relative;
+            overflow: visible;
+
+            .tns-nav {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 10px;
+
+                @include gt-desktop {
+                    position: unset;
+                    margin-top: 70px;
                 }
             }
         }

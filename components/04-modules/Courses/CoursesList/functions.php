@@ -1,17 +1,17 @@
 <?php
 
 global $componentPath;
-$componentPath['Stage'] = 'components/04-modules/Stage/Stage';
+$componentPath['CoursesList'] = 'components/04-modules/Courses/CoursesList/CoursesList';
 
 if (function_exists('acf_register_block')) {
     acf_register_block(array(
-        'name' => 'stage',
-        'title' => __('Stage', 'studio'),
+        'name' => 'coursesList',
+        'title' => __('Courses list', 'studio'),
         'description' => __(''),
         'render_callback' => 'acfRenderCallback',
         'category' => 'components',
-        'icon' => 'format-image',
-        'keywords' => array('stage'),
+        'icon' => 'list-view',
+        'keywords' => array('coursesList'),
         'mode' => 'edit',
         'supports' => array('align' => false),
     ));
