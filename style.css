@@ -824,6 +824,9 @@ strong {
     margin-top: 24px;
   }
 }
+.Accordion__item--show .Accordion__head {
+  color: #CD305E;
+}
 .Accordion__item--show .Accordion__head::after {
   background: url("./img/arrow-highlight.svg") no-repeat;
   background-size: contain;
@@ -1100,7 +1103,6 @@ strong {
   padding: 15px 55px 15px 20px;
   font-size: 14px;
   font-weight: 500;
-  color: #CD305E;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.025);

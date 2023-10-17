@@ -16,6 +16,8 @@
                 &show {
                     #{$self}__ {
                         &head {
+                            color: $highlight;
+                            
                             &::after {
                                 background: url("./img/arrow-highlight.svg") no-repeat;
                                 background-size: contain;
