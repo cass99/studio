@@ -19,6 +19,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 p {
     margin-top: 0;
     margin-bottom: 0;
@@ -29,6 +30,8 @@ p {
 }
 
 p {
+    line-height: 1.3;
+
     @include gt-desktop {
         &:first-of-type {
             margin-top: 20px;
@@ -78,6 +81,17 @@ h5 {
 
     @include gt-desktop {
         font-size: 18px;
+    }
+}
+
+h6 {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $highlight;
+
+    @include gt-desktop {
+        font-size: 15px;
     }
 }
 

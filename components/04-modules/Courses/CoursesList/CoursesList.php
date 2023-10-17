@@ -5,12 +5,10 @@ $genreTerms = get_terms([
     'hide_empty' => true,
 ]);
 ?>
-<div class="CoursesList Module">
+<section class="CoursesList Module">
     <div class="container container--wide">
         <?php if ($subheadline = get_field('coursesList::subheadline')) : ?>
-            <p class="CoursesList__subheadline">
-                <?= $subheadline; ?>
-            </p>
+            <h6><?= $subheadline; ?></h6>
         <?php endif; ?>
         <?php if ($headline = get_field('coursesList::headline')) : ?>
             <h1><?= $headline; ?></h1>
@@ -45,4 +43,4 @@ $genreTerms = get_terms([
             <?php endforeach;?>
         <?php endif; ?>
     </div>
-</div>
+</section>

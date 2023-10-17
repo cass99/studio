@@ -1,0 +1,44 @@
+
+.Faq {
+
+    &__ {
+        &header {
+            @include gt-desktop {
+                text-align: center;
+            }
+        }
+
+        &accordion {
+            margin-top: 60px;
+
+            @include gt-desktop {
+                margin-top: 70px;
+            }
+
+            &Head {
+                padding: 15px 55px 15px 20px;
+                font-size: 14px;
+                font-weight: 500;
+                color: $highlight;
+                background-color: $white;
+                border-radius: 10px;
+                box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.025);
+
+                @include gt-desktop {
+                    font-size: 22px;
+                    padding: 35px 75px 35px 40px;
+                }
+            }
+
+            &Content {
+                margin-top: 0 !important;
+                padding: 24px 55px 24px 20px;
+
+                @include gt-desktop {
+                    font-size: 22px;
+                    padding: 35px 75px 70px 40px;
+                }
+            }
+        }
+    }
+}

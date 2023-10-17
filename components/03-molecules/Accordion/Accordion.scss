@@ -1,0 +1,64 @@
+
+.Accordion {
+    $self: &;
+
+    &__ {
+        &item {
+            &:not(:first-of-type) {
+                margin-top: 8px;
+
+                @include gt-desktop {
+                    margin-top: 24px;
+                }
+            }
+
+            &-- {
+                &show {
+                    #{$self}__ {
+                        &head {
+                            &::after {
+                                background: url("./img/arrow-highlight.svg") no-repeat;
+                                background-size: contain;
+                            }
+                        }
+
+                        &content {
+                            max-height: 500px; /* approximate max height */
+                        }
+                    }
+                }
+            }
+        }
+
+        &head {
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                right: 20px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: url("./img/arrow-black.svg") no-repeat;
+                background-size: contain;
+                width: 12px;
+                height: 8px;
+
+                @include gt-desktop {
+                    right: 40px;
+                    width: 20px;
+                    height: 10px;
+                }
+            }
+        }
+
+        &content {
+            overflow: hidden;
+            max-height: 0;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}

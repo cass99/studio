@@ -409,6 +409,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 p {
   margin-top: 0;
   margin-bottom: 0;
@@ -418,10 +419,14 @@ h2:not(:first-child),
 h3:not(:first-child),
 h4:not(:first-child),
 h5:not(:first-child),
+h6:not(:first-child),
 p:not(:first-child) {
   margin-top: 12px;
 }
 
+p {
+  line-height: 1.3;
+}
 @media only screen and (min-width: 1211px) {
   p:first-of-type {
     margin-top: 20px;
@@ -475,6 +480,18 @@ h5 {
 @media only screen and (min-width: 1211px) {
   h5 {
     font-size: 18px;
+  }
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #CD305E;
+}
+@media only screen and (min-width: 1211px) {
+  h6 {
+    font-size: 15px;
   }
 }
 
@@ -799,6 +816,51 @@ strong {
   }
 }
 
+.Accordion__item:not(:first-of-type) {
+  margin-top: 8px;
+}
+@media only screen and (min-width: 1211px) {
+  .Accordion__item:not(:first-of-type) {
+    margin-top: 24px;
+  }
+}
+.Accordion__item--show .Accordion__head::after {
+  background: url("./img/arrow-highlight.svg") no-repeat;
+  background-size: contain;
+}
+.Accordion__item--show .Accordion__content {
+  max-height: 500px; /* approximate max height */
+}
+.Accordion__head {
+  position: relative;
+  cursor: pointer;
+}
+.Accordion__head::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: url("./img/arrow-black.svg") no-repeat;
+  background-size: contain;
+  width: 12px;
+  height: 8px;
+}
+@media only screen and (min-width: 1211px) {
+  .Accordion__head::after {
+    right: 40px;
+    width: 20px;
+    height: 10px;
+  }
+}
+.Accordion__content {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.5s ease-in-out;
+}
+
 .Module:not(:first-child) {
   margin-top: var(--moduleSpace);
 }
@@ -903,17 +965,6 @@ strong {
 
 .CoursesList {
   text-align: center;
-}
-.CoursesList__subheadline {
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #CD305E;
-}
-@media only screen and (min-width: 1211px) {
-  .CoursesList__subheadline {
-    font-size: 15px;
-  }
 }
 .CoursesList__genre {
   display: flex;
@@ -1030,6 +1081,45 @@ strong {
 }
 .CoursesTile__button {
   margin-top: auto;
+}
+
+@media only screen and (min-width: 1211px) {
+  .Faq__header {
+    text-align: center;
+  }
+}
+.Faq__accordion {
+  margin-top: 60px;
+}
+@media only screen and (min-width: 1211px) {
+  .Faq__accordion {
+    margin-top: 70px;
+  }
+}
+.Faq__accordionHead {
+  padding: 15px 55px 15px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #CD305E;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.025);
+}
+@media only screen and (min-width: 1211px) {
+  .Faq__accordionHead {
+    font-size: 22px;
+    padding: 35px 75px 35px 40px;
+  }
+}
+.Faq__accordionContent {
+  margin-top: 0 !important;
+  padding: 24px 55px 24px 20px;
+}
+@media only screen and (min-width: 1211px) {
+  .Faq__accordionContent {
+    font-size: 22px;
+    padding: 35px 75px 70px 40px;
+  }
 }
 
 .Header__container {
