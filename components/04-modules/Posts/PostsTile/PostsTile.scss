@@ -1,0 +1,135 @@
+
+.PostsTile {
+    
+    &__ {
+        &container {
+            display: flex;
+            flex-direction: column;
+            background-color: $white;
+            height: 380px;
+
+            &:hover {
+                box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.025);
+            }
+
+            @include gt-desktop {
+                height: 525px;
+            }
+        }
+
+        &image {
+            height: 165px;
+            width: 100%;
+            object-fit: cover;
+
+            @include gt-desktop {
+                height: 250px;
+            }
+        }
+
+        &content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 100%;
+            padding: 0 20px 20px 20px;
+        }
+
+        &information {
+            display: flex;
+            position: absolute;
+            top: -26px;
+
+            @include gt-desktop {
+                top: -35px;
+            }
+
+            &Date {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 54px;
+                height: 54px;
+                color: $white;
+                background-color: $black;
+
+                @include gt-desktop {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                &Day {
+                    font-size: 30px;
+
+                    @include gt-desktop {
+                        font-size: 40px;
+                    }
+                }
+
+                &Year {
+                    font-size: 8px;
+
+                    @include gt-desktop {
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            &Category {
+                height: fit-content;
+                margin-top: auto;
+                margin-left: 12px;
+                font-size: 10px;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.2;
+                color: $highlight;
+
+                @include gt-desktop {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        &excerpt {
+            margin-top: 50px;
+
+            @include gt-desktop {
+                margin-top: 70px;
+            }
+        }
+
+        &link {
+            display: block;
+            margin-top: auto;
+            font-size: 12px;
+            font-weight: 500;
+            color: $body;
+            transition: 0.3s;
+
+            @include gt-desktop {
+                font-size: 15px;
+            }
+
+            &::after {
+                content: '';
+                display: inline-block;
+                background: url("./img/arrow-left-black.svg") no-repeat;
+                background-size: contain;
+                width: 14px;
+                height: 8px;
+                margin-left: 8px;
+            }
+
+            &:hover {
+                color: $highlight;
+
+                &::after {
+                    background: url("./img/arrow-left-highlight.svg") no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}

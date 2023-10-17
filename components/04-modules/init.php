@@ -3,3 +3,4 @@
 require_once('Stage/functions.php');
 require_once('Courses/functions.php');
 require_once('Faq/functions.php');
+require_once('Posts/functions.php');

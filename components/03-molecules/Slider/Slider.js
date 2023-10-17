@@ -51,6 +51,23 @@ export default class Slider {
             };
         }
 
+        if ($slider.classList.contains('Slider--postsList')) {
+            if ($container.children.length === 1) {
+                $options.center = true;
+            }
+
+            $options.fixedWidth = 260;
+            $options.gutter = 10;
+            $options.responsive = {
+                "1210": {
+                    "items": 4,
+                    "fixedWidth": false,
+                    "gutter": 40,
+                    "nav": false
+                }
+            };
+        }
+
         tns($options);
     }
 

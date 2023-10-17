@@ -509,7 +509,7 @@ strong {
   margin-left: auto;
   position: relative;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1500px;
 }
 @media only screen and (min-width: 768px) {
   .container {
@@ -814,6 +814,10 @@ strong {
     position: unset;
     margin-top: 70px;
   }
+}
+.Slider--postsList .tns-nav {
+  text-align: center;
+  margin-top: 40px;
 }
 
 .Accordion__item:not(:first-of-type) {
@@ -1122,6 +1126,141 @@ strong {
     font-size: 22px;
     padding: 35px 75px 70px 40px;
   }
+}
+
+.PostsList__slider {
+  margin-top: 40px;
+}
+@media only screen and (min-width: 1211px) {
+  .PostsList__slider {
+    margin-top: 70px;
+  }
+}
+
+.PostsTile__container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  height: 380px;
+}
+.PostsTile__container:hover {
+  box-shadow: 0px 0px 14px 4px rgba(0, 0, 0, 0.025);
+}
+@media only screen and (min-width: 1211px) {
+  .PostsTile__container {
+    height: 525px;
+  }
+}
+.PostsTile__image {
+  height: 165px;
+  width: 100%;
+  object-fit: cover;
+}
+@media only screen and (min-width: 1211px) {
+  .PostsTile__image {
+    height: 250px;
+  }
+}
+.PostsTile__content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  padding: 0 20px 20px 20px;
+}
+.PostsTile__information {
+  display: flex;
+  position: absolute;
+  top: -26px;
+}
+@media only screen and (min-width: 1211px) {
+  .PostsTile__information {
+    top: -35px;
+  }
+}
+.PostsTile__informationDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  color: #fff;
+  background-color: #000;
+}
+@media only screen and (min-width: 1211px) {
+  .PostsTile__informationDate {
+    width: 70px;
+    height: 70px;
+  }
+}
+.PostsTile__informationDateDay {
+  font-size: 30px;
+}
+@media only screen and (min-width: 1211px) {
+  .PostsTile__informationDateDay {
+    font-size: 40px;
+  }
+}
+.PostsTile__informationDateYear {
+  font-size: 8px;
+}
+@media only screen and (min-width: 1211px) {
+  .PostsTile__informationDateYear {
+    font-size: 10px;
+  }
+}
+.PostsTile__informationCategory {
+  height: fit-content;
+  margin-top: auto;
+  margin-left: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2;
+  color: #CD305E;
+}
+@media only screen and (min-width: 1211px) {
+  .PostsTile__informationCategory {
+    font-size: 12px;
+  }
+}
+.PostsTile__excerpt {
+  margin-top: 50px;
+}
+@media only screen and (min-width: 1211px) {
+  .PostsTile__excerpt {
+    margin-top: 70px;
+  }
+}
+.PostsTile__link {
+  display: block;
+  margin-top: auto;
+  font-size: 12px;
+  font-weight: 500;
+  color: #222222;
+  transition: 0.3s;
+}
+@media only screen and (min-width: 1211px) {
+  .PostsTile__link {
+    font-size: 15px;
+  }
+}
+.PostsTile__link::after {
+  content: "";
+  display: inline-block;
+  background: url("./img/arrow-left-black.svg") no-repeat;
+  background-size: contain;
+  width: 14px;
+  height: 8px;
+  margin-left: 8px;
+}
+.PostsTile__link:hover {
+  color: #CD305E;
+}
+.PostsTile__link:hover::after {
+  background: url("./img/arrow-left-highlight.svg") no-repeat;
+  background-size: contain;
 }
 
 .Header__container {

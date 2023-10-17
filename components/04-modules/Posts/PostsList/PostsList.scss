@@ -1,0 +1,13 @@
+
+.PostsList {
+
+    &__ {
+        &slider {
+            margin-top: 40px;
+
+            @include gt-desktop {
+                margin-top: 70px;
+            }
+        }
+    }
+}

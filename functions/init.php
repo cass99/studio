@@ -51,4 +51,7 @@ function addCustomFormats($initArray) {
 } 
 
 add_filter( 'tiny_mce_before_init', 'addCustomFormats' );
+
+// Add featured image to post
+add_theme_support('post-thumbnails');
  
